@@ -10,11 +10,13 @@
 - `transport`：ADB / 直连 / Mock 传输抽象层。
 - `session`：账号上下文和受限权限会话持久化。
 - `motion_lab`：传感器/GPS 基线录制、时变步频、航点插值和故障注入。
+- `detection_lab`：检测点测绘、严重度矩阵和静态字符串扫描。
+- `telemetry`：结构化 run 记录、事件日志和敏感信息脱敏。
 
 后续阶段：
 
-- `detection_lab`
-- `telemetry`
+- 端到端 CLI 编排
+- CI / golden test
 
 ## 边界
 
