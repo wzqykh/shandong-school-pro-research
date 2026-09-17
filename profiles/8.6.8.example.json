@@ -1,0 +1,30 @@
+{
+  "version": "8.6.8",
+  "app_version": "8.6.8",
+  "build_version": "26082519",
+  "apk_sha256": "replace_with_real_apk_sha256",
+  "sign_key": "F44B0282BEA83557",
+  "iv": "01234ABCDEF56789",
+  "captcha_key": "Ukp3hmSe7BmMcgbE",
+  "base_url": "https://example.invalid",
+  "common_headers": {
+    "User-Agent": "ShanDong/8.6.8",
+    "Content-Type": "application/json"
+  },
+  "endpoint_map": {
+    "login": "/api/login",
+    "free_run": "/api/freeRun",
+    "fence": "/api/fence"
+  },
+  "device_profiles": [
+    {
+      "device_id": "replace_with_device_id",
+      "model": "ALP-AN00",
+      "system_version": "14",
+      "platform": "2",
+      "ua": "ShanDong/8.6.8 (HONOR;Android 14)",
+      "network_context": "mobile",
+      "binding_status": "unknown"
+    }
+  ]
+}
