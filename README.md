@@ -8,11 +8,11 @@
 - `apk_lab`：APK 拉取、哈希、版本识别、manifest/权限/组件提取。
 - `protocol_lab`：endpoint schema、签名 oracle、抓包回放验签。
 - `transport`：ADB / 直连 / Mock 传输抽象层。
+- `session`：账号上下文和受限权限会话持久化。
+- `motion_lab`：传感器/GPS 基线录制、时变步频、航点插值和故障注入。
 
 后续阶段：
 
-- `session`
-- `motion_lab`
 - `detection_lab`
 - `telemetry`
 
