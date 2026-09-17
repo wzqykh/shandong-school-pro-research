@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from .apk_lab import AdbRunner, fill_version_info, pull_apk, write_manifest_report
+from .pipeline import run_apk_lab_pipeline
 from .profiles import load_profile, validate_profile
 from .protocol_lab import SignOracle
 
@@ -52,6 +53,21 @@ def _parse_sign(args: argparse.Namespace) -> int:
     return 0
 
 
+def _parse_run(args: argparse.Namespace) -> int:
+    result = run_apk_lab_pipeline(
+        profile_path=args.profile,
+        output_dir=args.output_dir,
+        telemetry_dir=args.telemetry_dir,
+        package=args.package,
+        adb_path=args.adb,
+        serial=args.serial,
+    )
+    print(f"run_id: {result.run_id}")
+    print(f"report: {result.report_path}")
+    print(f"sha256: {result.apk.sha256}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="flashrun")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -84,6 +100,15 @@ def build_parser() -> argparse.ArgumentParser:
     sign.add_argument("profile")
     sign.add_argument("payload")
     sign.set_defaults(func=_parse_sign)
+
+    run = subparsers.add_parser("run", help="Run the apk_lab pipeline")
+    run.add_argument("profile")
+    run.add_argument("output_dir")
+    run.add_argument("telemetry_dir")
+    run.add_argument("--package", default=None)
+    run.add_argument("--adb", default="adb")
+    run.add_argument("--serial", default=None)
+    run.set_defaults(func=_parse_run)
 
     return parser
 
