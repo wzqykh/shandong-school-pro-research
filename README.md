@@ -6,11 +6,11 @@
 
 - `profiles`：版本、端点、密钥、设备指纹档案。
 - `apk_lab`：APK 拉取、哈希、版本识别、manifest/权限/组件提取。
+- `protocol_lab`：endpoint schema、签名 oracle、抓包回放验签。
+- `transport`：ADB / 直连 / Mock 传输抽象层。
 
 后续阶段：
 
-- `protocol_lab`
-- `transport`
 - `session`
 - `motion_lab`
 - `detection_lab`

@@ -7,7 +7,8 @@ import json
 from pathlib import Path
 
 from .apk_lab import AdbRunner, fill_version_info, pull_apk, write_manifest_report
-from .profiles import validate_profile
+from .profiles import load_profile, validate_profile
+from .protocol_lab import SignOracle
 
 
 def _parse_profile_validate(args: argparse.Namespace) -> int:
@@ -43,6 +44,14 @@ def _parse_apk_manifest(args: argparse.Namespace) -> int:
     return 0
 
 
+def _parse_sign(args: argparse.Namespace) -> int:
+    profile = load_profile(args.profile)
+    payload = Path(args.payload).read_text(encoding="utf-8")
+    oracle = SignOracle(profile.sign_key, profile.iv)
+    print(oracle.recompute(payload))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="flashrun")
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -70,6 +79,11 @@ def build_parser() -> argparse.ArgumentParser:
     apk_manifest.add_argument("--adb", default="adb")
     apk_manifest.add_argument("--serial", default=None)
     apk_manifest.set_defaults(func=_parse_apk_manifest)
+
+    sign = subparsers.add_parser("sign", help="Recompute a signature from a profile and payload")
+    sign.add_argument("profile")
+    sign.add_argument("payload")
+    sign.set_defaults(func=_parse_sign)
 
     return parser
 
