@@ -1,0 +1,21 @@
+{
+  "version": "2.0.6",
+  "source": "闪动校园Pro App 内学校规则，2026-09-17 从 uiautomator 只读导出",
+  "effective_from": "2026-09-14",
+  "effective_to": "2026-12-20",
+  "target_runs": 50,
+  "daily_start": "06:00",
+  "daily_end": "22:00",
+  "min_distance_km": 2.4,
+  "max_distance_km": 10.0,
+  "pace": {
+    "min_sec_per_km": 240,
+    "max_sec_per_km": 480
+  },
+  "daily_max_runs": 2,
+  "weekly_max_runs": 14,
+  "pause_seconds": 120,
+  "run_mode": "sequential_checkpoint",
+  "checkpoint_count": 3,
+  "valid_area": "田径场"
+}

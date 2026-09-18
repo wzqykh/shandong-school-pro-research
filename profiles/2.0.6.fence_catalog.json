@@ -1,0 +1,30 @@
+{
+  "version": "2.0.6",
+  "source": "闪动校园Pro 跑步区域 -> 更多，2026-09-17 从 uiautomator 只读导出",
+  "fences": [
+    {
+      "id": "track-main-0-07km",
+      "name": "田径场",
+      "distance_km": 0.07,
+      "status": "开放中"
+    },
+    {
+      "id": "track-west-3-36km",
+      "name": "西田径场",
+      "distance_km": 3.36,
+      "status": "开放中"
+    },
+    {
+      "id": "track-east-3-80km",
+      "name": "东田径场",
+      "distance_km": 3.8,
+      "status": "开放中"
+    },
+    {
+      "id": "track-main-6-84km",
+      "name": "田径场",
+      "distance_km": 6.84,
+      "status": "开放中"
+    }
+  ]
+}
