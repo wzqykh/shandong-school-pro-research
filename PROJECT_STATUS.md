@@ -1,6 +1,6 @@
 # 项目状态索引
 
-更新时间：2026-09-18
+更新时间：2026-10-10
 
 ## 一句话定位
 
@@ -16,7 +16,7 @@
 
 - `/home/wzqykh/shandong-school-pro-research`
 - `/mnt/d/shandong_school_pro_local`
-- GitHub 私有仓库 `wzqykh/shandong-school-pro-research`
+- GitHub 公开仓库 `wzqykh/shandong-school-pro-research`
 
 ## 关键位置
 
@@ -42,6 +42,7 @@
 - 已将 2.0.6 学校规则、围栏目录落成结构化 JSON，并把关键 App UI dump 存入 `research/ui_dumps/`。
 - 已读取 2026-09-18 16:16 的一次无效阳光跑结果：0.806 km，用时 06:18，配速 07'49"，状态无效；里程低于 2.4 km 达标线。
 - 本地测试扩展到 37 passed。
+- 自己账号完成权限最小化与去广告：无障碍/悬浮窗关闭，定位/传感器/相机/麦克风保留，AdGuard VPN 去广告 + Private DNS off。并修正测试账号结论：无障碍和悬浮窗不是跑步必要权限，但全新账号需先走一遍 App「一键开启必要权限」把后台保护/自启动/电池白名单落盘后，才能安全关掉这两项（见 `research/12_self_account_permission_adblock.md`）。
 
 ## 待办
 
